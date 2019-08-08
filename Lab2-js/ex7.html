@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    async function fetchUsersAsync() {
+        const res = await fetch("https://api.github.com/users");
+        const json = await res.json();
+        console.log(json);
+
+    }
+
+    fetchUsersAsync();
+
+</script>
+</body>
+</html>

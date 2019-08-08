@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    const func1 = function () {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                console.log('func1');
+                resolve('func1');
+            }, 1000);
+        });
+    }
+    const func2 = function () {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                console.log('func2');
+                resolve('func2');
+            }, 500);
+        });
+    }
+    const func3 = function () {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                console.log('func3');
+                resolve('func3');
+            }, 500);
+        });
+    }
+
+    func1()
+        .then(function () {
+              return func2();
+        })
+        .then(function () {
+              return func3();
+        })
+
+    // Promise.all([func1(),func2(),func3()]);
+</script>
+</body>
+</html>
